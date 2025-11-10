@@ -11,8 +11,9 @@ export const isTouchDevice = (): boolean => {
 // Improved scroll performance for mobile
 export const enableSmoothScrolling = () => {
   if (isTouchDevice()) {
-    (document.documentElement.style as any).webkitOverflowScrolling = 'touch';
-    document.documentElement.style.scrollBehavior = 'smooth';
+    // Disabled webkit overflow scrolling to prevent scroll issues
+    // (document.documentElement.style as any).webkitOverflowScrolling = 'touch';
+    // document.documentElement.style.scrollBehavior = 'smooth'; // Disabled to fix double scroll
   }
 };
 

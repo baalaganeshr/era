@@ -30,10 +30,10 @@ const StatsShowcase = () => {
           {stats.map((stat, index) => (
             <Reveal key={stat.id} delay={index * 0.08}>
               <div className="card text-center">
-                <div className="text-gradient" style={{ fontSize: '64px', fontWeight: 900, lineHeight: 1, marginBottom: '16px' }}>
+                <div className="text-gradient text-4xl md:text-5xl" style={{ fontWeight: 900, lineHeight: 1, marginBottom: '16px' }}>
                   <Counter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
                 </div>
-                <p style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px', color: 'var(--color-text-primary)' }}>
+                <p style={{ fontSize: '16px', fontWeight: 700, marginBottom: '8px', color: 'var(--color-text-primary)' }}>
                   {stat.label}
                 </p>
                 <p className="text-small" style={{ color: 'var(--color-text-secondary)' }}>

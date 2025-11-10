@@ -29,12 +29,14 @@ const CTASection = () => {
               </div>
               
               <div className="flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-8">
-                <Link 
-                  to="/signup" 
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSftmT9nAdqWqHIW5N_hM4JW5CFHNlKq-H_Sc0ndz_G3r4WXWA/viewform"
+                  target="_blank"
+                  rel="noopener noreferrer" 
                   className="btn btn-primary hover-lift rounded-xl px-12 py-4 text-base font-semibold uppercase tracking-[0.1em] min-w-[280px] sm:min-w-auto"
                 >
                   Request Information
-                </Link>
+                </a>
                 <Link
                   to="/contact"
                   className="btn btn-secondary hover-lift rounded-xl px-12 py-4 text-base font-semibold uppercase tracking-[0.1em] min-w-[280px] sm:min-w-auto"
@@ -54,8 +56,8 @@ const CTASection = () => {
                   <p className="text-xs text-white/70">Senior developers from Fortune 500 companies</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-sm text-white/90 font-medium mb-1">Proven Success Rate</p>
-                  <p className="text-xs text-white/70">94% career advancement within 90 days</p>
+                  <p className="text-sm text-white/90 font-medium mb-1">Quality Assurance</p>
+                  <p className="text-xs text-white/70">Comprehensive testing and code review</p>
                 </div>
               </div>
               

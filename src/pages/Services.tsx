@@ -18,23 +18,33 @@ const engagementHighlights = [
 ];
 
 const Services = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="min-h-screen py-20 px-4">
+    <div className="min-h-screen py-8 px-4">
       <Reveal>
         <div className="max-w-7xl mx-auto px-4">
           <div className="glass-surface relative overflow-hidden rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-purple-900/50 to-black/80 p-12 md:p-16 text-center">
             <div className="absolute -left-24 top-[-30%] h-80 w-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.4),transparent_70%)] blur-[110px]" />
             <p className="text-xs uppercase tracking-[0.4em] text-secondary-500">STACKO Development</p>
-            <h1 className="mt-6 text-4xl md:text-5xl font-bold text-white">
+            <h1 className="mt-6 text-3xl md:text-4xl font-bold text-white">
               Professional web development services
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-lg text-white/80">
               We build modern web applications using React, Node.js, and the latest technologies. From MVP to full-scale applications, we create solutions that work for your business.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row justify-center">
-              <Link to="/contact" className="btn btn-primary hover-lift rounded-full px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em]">
+              <button 
+                onClick={scrollToContact}
+                className="btn btn-primary hover-lift rounded-full px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em]"
+              >
                 Contact Us
-              </Link>
+              </button>
               <Link
                 to="/portfolio"
                 className="btn btn-secondary hover-lift rounded-full px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em]"
@@ -54,8 +64,7 @@ const Services = () => {
                 className="glass-surface hover-lift rounded-[2.5rem] border border-white/14 p-8 h-full"
                 id={service.slug}
               >
-                <div className="flex items-center justify-between text-xs text-white/65">
-                  <span className="rounded-full border border-white/20 px-4 py-1 text-white/90">{service.priceRange}</span>
+                <div className="flex items-center justify-end text-xs text-white/65">
                   <span className="text-secondary-500">{service.deliverables.length} key deliverables</span>
                 </div>
                 <h2 className="mt-6 text-2xl font-bold text-white">{service.title}</h2>
@@ -83,9 +92,9 @@ const Services = () => {
                   </ul>
                 </div>
                 <div className="mt-10 flex flex-wrap items-center justify-between gap-4 text-sm text-secondary-500">
-                  <Link to="/contact" className="transition hover:text-secondary-300">
+                  <button onClick={scrollToContact} className="transition hover:text-secondary-300">
                     Kick off this sprint →
-                  </Link>
+                  </button>
                   <Link to="/portfolio" className="rounded-full border border-secondary-500/30 px-5 py-2 text-xs uppercase tracking-[0.24em]">
                     View work
                   </Link>
@@ -108,6 +117,45 @@ const Services = () => {
           </div>
         </div>
       </Reveal>
+
+      {/* Contact Information Section - Always visible at bottom */}
+      <div id="contact-section" className="max-w-7xl mx-auto mt-16 px-4">
+        <div className="glass-surface rounded-[2.5rem] border border-white/12 bg-black/45 p-12 text-center">
+          <h3 className="text-2xl font-semibold text-white mb-8">Contact Information</h3>
+          
+          <div className="grid gap-8 md:grid-cols-2 text-center">
+            <a 
+              href="mailto:stackoindustries@gmail.com" 
+              className="flex flex-col items-center gap-4 p-8 rounded-2xl border border-white/12 bg-black/40 hover:bg-black/60 transition-all duration-300 group"
+            >
+              <div className="w-16 h-16 rounded-full bg-secondary-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="text-3xl">📧</span>
+              </div>
+              <div>
+                <p className="text-sm text-white/60 mb-2">Email us</p>
+                <p className="text-xl font-semibold text-white">stackoindustries@gmail.com</p>
+              </div>
+            </a>
+            
+            <a 
+              href="tel:+919751987380" 
+              className="flex flex-col items-center gap-4 p-8 rounded-2xl border border-white/12 bg-black/40 hover:bg-black/60 transition-all duration-300 group"
+            >
+              <div className="w-16 h-16 rounded-full bg-secondary-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="text-3xl">📞</span>
+              </div>
+              <div>
+                <p className="text-sm text-white/60 mb-2">Call us</p>
+                <p className="text-xl font-semibold text-white">+91 9751987380</p>
+              </div>
+            </a>
+          </div>
+          
+          <p className="mt-8 text-white/70">
+            ⏰ We respond within 24 hours during business days
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

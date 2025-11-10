@@ -5,11 +5,11 @@ const Footer = () => {
 
   return (
     <footer style={{ marginTop: '120px', borderTop: '1px solid rgba(255,255,255,0.08)', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(20px)' }}>
-      <div className="page-shell grid lg:grid-cols-[2fr_1fr_1fr_1fr_1fr]" style={{ gap: '64px', paddingTop: '80px', paddingBottom: '40px' }}>
+      <div className="page-shell grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr]" style={{ gap: '48px md:64px', paddingTop: '60px md:80px', paddingBottom: '40px' }}>
         {/* Brand Column */}
-        <div>
-          <div className="flex items-center" style={{ gap: '16px', marginBottom: '24px' }}>
-            <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 flex items-center justify-center flex-shrink-0">
+        <div className="md:col-span-2 lg:col-span-1 text-center md:text-left">
+          <div className="flex items-center justify-center md:justify-start" style={{ gap: '16px', marginBottom: '24px' }}>
+            <div className="h-12 w-12 md:h-16 md:w-16 flex items-center justify-center flex-shrink-0">
               <img 
                 src="/stacko-1.0/stacko-logo.svg" 
                 alt="STACKO Logo" 
@@ -17,19 +17,21 @@ const Footer = () => {
               />
             </div>
             <div>
-              <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white" style={{ lineHeight: 1 }}>STACKO</p>
+              <p className="text-xl md:text-2xl font-extrabold text-white" style={{ lineHeight: 1 }}>STACKO</p>
               <p className="text-small" style={{ color: 'var(--color-text-muted)', marginTop: '4px' }}>Programming Collective</p>
             </div>
           </div>
-          <p className="text-small" style={{ maxWidth: '400px', color: 'var(--color-text-secondary)', marginBottom: '24px' }}>
+          <p className="text-small mx-auto md:mx-0" style={{ maxWidth: '400px', color: 'var(--color-text-secondary)', marginBottom: '24px' }}>
             STACKO teaches modern web development through hands-on courses and provides professional development services.
           </p>
-          <div className="flex flex-wrap items-center text-small" style={{ gap: '16px', color: 'var(--color-text-secondary)' }}>
-            <a className="transition hover:text-white" href="mailto:stackoindustries@gmail.com">
+          <div className="flex flex-col md:flex-row flex-wrap items-center justify-center md:justify-start text-small gap-3 md:gap-4" style={{ color: 'var(--color-text-secondary)' }}>
+            <a className="transition hover:text-white break-all text-center" href="mailto:stackoindustries@gmail.com">
               stackoindustries@gmail.com
             </a>
-            <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'rgba(255,255,255,0.2)' }} />
-            <p>+91 9751987380</p>
+            <span className="hidden md:block" style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'rgba(255,255,255,0.2)' }} />
+            <a className="transition hover:text-white" href="tel:+919751987380">
+              +91 9751987380
+            </a>
           </div>
         </div>
 
@@ -66,10 +68,20 @@ const Footer = () => {
             <Link className="text-small transition hover:text-white" style={{ color: 'var(--color-text-secondary)' }} to="/blog">
               Blog
             </Link>
-            <a className="text-small transition hover:text-white" style={{ color: 'var(--color-text-secondary)' }} href="#">
+            <a 
+              className="text-small transition hover:text-white" 
+              style={{ color: 'var(--color-text-secondary)' }} 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSftmT9nAdqWqHIW5N_hM4JW5CFHNlKq-H_Sc0ndz_G3r4WXWA/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Documentation
             </a>
-            <a className="text-small transition hover:text-white" style={{ color: 'var(--color-text-secondary)' }} href="#">
+            <a 
+              className="text-small transition hover:text-white" 
+              style={{ color: 'var(--color-text-secondary)' }} 
+              href="mailto:stackoindustries@gmail.com"
+            >
               Support
             </a>
           </div>
@@ -87,7 +99,13 @@ const Footer = () => {
             <Link className="text-small transition hover:text-white" style={{ color: 'var(--color-text-secondary)' }} to="/terms">
               Terms
             </Link>
-            <a className="text-small transition hover:text-white" style={{ color: 'var(--color-text-secondary)' }} href="#">
+            <a 
+              className="text-small transition hover:text-white" 
+              style={{ color: 'var(--color-text-secondary)' }} 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSftmT9nAdqWqHIW5N_hM4JW5CFHNlKq-H_Sc0ndz_G3r4WXWA/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Accessibility
             </a>
           </div>
@@ -99,17 +117,37 @@ const Footer = () => {
             Connect
           </p>
           <div className="flex flex-col" style={{ gap: '16px' }}>
-            <a className="text-small transition hover:text-white" style={{ color: 'var(--color-text-secondary)' }} href="#">
-              Twitter
+            <a 
+              className="text-small transition hover:text-white" 
+              style={{ color: 'var(--color-text-secondary)' }} 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSftmT9nAdqWqHIW5N_hM4JW5CFHNlKq-H_Sc0ndz_G3r4WXWA/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact Form
             </a>
-            <a className="text-small transition hover:text-white" style={{ color: 'var(--color-text-secondary)' }} href="#">
-              LinkedIn
+            <a 
+              className="text-small transition hover:text-white" 
+              style={{ color: 'var(--color-text-secondary)' }} 
+              href="mailto:stackoindustries@gmail.com"
+            >
+              stackoindustries@gmail.com
             </a>
-            <a className="text-small transition hover:text-white" style={{ color: 'var(--color-text-secondary)' }} href="#">
-              GitHub
+            <a 
+              className="text-small transition hover:text-white" 
+              style={{ color: 'var(--color-text-secondary)' }} 
+              href="tel:+919751987380"
+            >
+              +91 9751987380
             </a>
-            <a className="text-small transition hover:text-white" style={{ color: 'var(--color-text-secondary)' }} href="#">
-              Discord
+            <a 
+              className="text-small transition hover:text-white" 
+              style={{ color: 'var(--color-text-secondary)' }} 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSftmT9nAdqWqHIW5N_hM4JW5CFHNlKq-H_Sc0ndz_G3r4WXWA/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get Started
             </a>
           </div>
         </div>

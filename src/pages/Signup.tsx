@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Reveal from "@/components/Reveal";
 
 const plans = [
@@ -34,72 +33,31 @@ const Signup = () => {
         </div>
       </Reveal>
 
-      <div className="section-shell grid gap-12 lg:grid-cols-[0.7fr_0.3fr]">
+      <div className="section-shell">
         <Reveal>
-          <form className="glass-surface rounded-[3rem] border border-white/14 p-12">
-            <div className="grid gap-6 md:grid-cols-2">
-              <label className="flex flex-col gap-2 text-sm text-white/65">
-                Full name
-                <input
-                  type="text"
-                  required
-                  className="rounded-2xl border border-white/15 bg-black/45 px-4 py-3 text-sm text-white placeholder:text-white/45 focus:border-secondary-500 focus:outline-none focus:ring-2 focus:ring-secondary-500/30"
-                  placeholder="Grace Hopper"
-                />
-              </label>
-              <label className="flex flex-col gap-2 text-sm text-white/65">
-                Email
-                <input
-                  type="email"
-                  required
-                  className="rounded-2xl border border-white/15 bg-black/45 px-4 py-3 text-sm text-white placeholder:text-white/45 focus:border-secondary-500 focus:outline-none focus:ring-2 focus:ring-secondary-500/30"
-                  placeholder="you@stacko.dev"
-                />
-              </label>
-              <label className="flex flex-col gap-2 text-sm text-white/65">
-                Password
-                <input
-                  type="password"
-                  required
-                  className="rounded-2xl border border-white/15 bg-black/45 px-4 py-3 text-sm text-white placeholder:text-white/45 focus:border-secondary-500 focus:outline-none focus:ring-2 focus:ring-secondary-500/30"
-                  placeholder="Set a strong password"
-                />
-              </label>
-              <label className="flex flex-col gap-2 text-sm text-white/65">
-                Select cohort track
-                <select
-                  className="rounded-2xl border border-white/15 bg-black/45 px-4 py-3 text-sm text-white focus:border-secondary-500 focus:outline-none focus:ring-2 focus:ring-secondary-500/30"
-                  defaultValue=""
-                >
-                  <option value="" disabled>
-                    Choose your focus
-                  </option>
-                  <option value="python">Python Essentials</option>
-                  <option value="fullstack">Full-Stack JavaScript</option>
-                  <option value="react">React Pro Lab</option>
-                  <option value="ai">Node.js AI Engineer</option>
-                  <option value="internship">STACKO Internship Studio</option>
-                </select>
-              </label>
-            </div>
-            <label className="mt-6 flex items-start gap-3 text-sm text-white/65">
-              <input type="checkbox" required className="mt-1 h-4 w-4 rounded border-white/25 bg-black/60" />
-              <span>
-                I agree to the{" "}
-                <Link to="/terms" className="text-secondary-500 transition hover:text-secondary-300">Terms of Use</Link>{" "}and{" "}
-                <Link to="/privacy" className="text-secondary-500 transition hover:text-secondary-300">Privacy Policy</Link>.
-              </span>
-            </label>
-            <button type="submit" className="glass-button hover-lift mt-10 w-full rounded-2xl px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white">
-              <span className="btn btn-primary mt-10 w-full rounded-2xl px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em]">
-                Create my account
-              </span>
-            </button>
-            <p className="mt-6 text-center text-sm text-white/65">
-              Already a member? <Link to="/login" className="text-secondary-500 transition hover:text-secondary-300">Log in</Link>
+          <div className="glass-surface rounded-[3rem] border border-white/14 p-12 text-center">
+            <h2 className="text-[clamp(1.8rem,2.8vw,2.4rem)] font-semibold text-white">Ready to Start Learning?</h2>
+            <p className="mt-4 text-lg text-white/70">
+              Join STACKO's community of developers and start building amazing projects today!
             </p>
-          </form>
+            <div className="mt-8">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSftmT9nAdqWqHIW5N_hM4JW5CFHNlKq-H_Sc0ndz_G3r4WXWA/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary inline-block rounded-2xl px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em]"
+              >
+                Get Started
+              </a>
+            </div>
+            <p className="mt-6 text-sm text-white/65">
+              Fill out our registration form to get started with STACKO.
+            </p>
+          </div>
         </Reveal>
+      </div>
+
+      <div className="section-shell">
         <Reveal>
           <div className="glass-surface rounded-[3rem] border border-white/14 p-12">
             <p className="text-xs uppercase tracking-[0.32em] text-secondary-500">Plans</p>

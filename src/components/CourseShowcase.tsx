@@ -217,12 +217,10 @@ const CourseShowcase = () => {
         <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#05060d] via-[#05060d]/65 to-transparent lg:w-24" />
         <div
           ref={sliderRef}
-          className="hide-scrollbar flex snap-x snap-mandatory gap-8 overflow-x-auto pb-6"
+          className="hide-scrollbar flex snap-x snap-mandatory gap-4 sm:gap-6 lg:gap-8 overflow-x-auto pb-6 px-4 sm:px-6"
           style={{ 
             scrollPaddingLeft: '50%', 
-            scrollPaddingRight: '50%',
-            paddingLeft: 'max(24px, calc((100vw - 1400px) / 2))',
-            paddingRight: 'max(24px, calc((100vw - 1400px) / 2))'
+            scrollPaddingRight: '50%'
           }}
         >
           {slides.map(({ course, variant }, index) => {
@@ -237,10 +235,10 @@ const CourseShowcase = () => {
                     opacity: isActive ? 1 : 0.85,
                   }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
-                  className={`snap-center group relative flex h-full flex-col rounded-[24px] border p-8 backdrop-blur transition-all duration-300 ${variant.surface} ${isActive ? 'ring-2 ring-white/30 shadow-2xl' : 'hover:ring-1 hover:ring-white/15'}`}
+                  className={`snap-center group relative flex h-full flex-col rounded-[24px] border p-6 sm:p-8 backdrop-blur transition-all duration-300 ${variant.surface} ${isActive ? 'ring-2 ring-white/30 shadow-2xl' : 'hover:ring-1 hover:ring-white/15'}`}
                   style={{ 
-                    minWidth: '380px', 
-                    maxWidth: '420px',
+                    minWidth: '320px', 
+                    maxWidth: '380px',
                     flexShrink: 0,
                   }}
                 >
@@ -261,10 +259,10 @@ const CourseShowcase = () => {
                     </div>
                     
                     <div className="space-y-2">
-                      <h3 className="text-[1.75rem] font-bold leading-tight text-white group-hover:text-white/95 transition-colors">
+                      <h3 className="text-xl sm:text-[1.75rem] font-bold leading-tight text-white group-hover:text-white/95 transition-colors">
                         {course.title}
                       </h3>
-                      <p className="text-base font-medium text-white/85">{course.tagline}</p>
+                      <p className="text-sm sm:text-base font-medium text-white/85">{course.tagline}</p>
                     </div>
                   </div>
 

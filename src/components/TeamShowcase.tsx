@@ -225,7 +225,7 @@ const TeamShowcase = React.memo(() => {
   if (!slides || slides.length === 0) {
     return (
       <section className="section-shell section-padding" id="team">
-        <div className="text-center py-16">
+        <div className="text-center py-8">
           <p className="text-white/60">Team information is loading...</p>
         </div>
       </section>
@@ -263,7 +263,7 @@ const TeamShowcase = React.memo(() => {
         <div className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-[#04050b] via-[#04050b]/65 to-transparent lg:w-20" />
         <div
           ref={sliderRef}
-          className="hide-scrollbar -mx-4 flex snap-x snap-mandatory gap-8 overflow-x-auto overscroll-x-contain pb-8 pl-4 pr-8 sm:-mx-6 sm:gap-10 sm:pl-6 sm:pr-10 lg:-mx-8 lg:gap-12 lg:pl-8 lg:pr-16 scroll-smooth"
+          className="hide-scrollbar flex snap-x snap-mandatory gap-4 sm:gap-6 md:gap-8 lg:gap-10 overflow-x-auto overscroll-x-contain pb-8 px-4 sm:px-6 lg:px-8"
         >
           {slides.map(({ member, variant }, index) => {
             const isActive = index === activeIndex;
@@ -285,13 +285,13 @@ const TeamShowcase = React.memo(() => {
                     opacity: isActive ? 1 : 0.85,
                   }}
                   transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  className={`group relative flex h-full w-[min(88vw,24rem)] flex-col rounded-2xl border backdrop-blur-sm transition-all duration-500 ${variant.surface} ${isActive ? 'ring-2 ring-white/25 shadow-2xl' : 'hover:ring-1 hover:ring-white/15'}`}
+                  className={`group relative flex h-full w-[min(85vw,22rem)] sm:w-[min(75vw,24rem)] md:w-[min(65vw,26rem)] lg:w-[min(55vw,28rem)] flex-col rounded-2xl border backdrop-blur-sm transition-all duration-500 ${variant.surface} ${isActive ? 'ring-2 ring-white/25 shadow-2xl' : 'hover:ring-1 hover:ring-white/15'}`}
                 >
                 {/* Professional gradient overlay */}
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${variant.halo} opacity-0 transition-all duration-500 ${isActive ? 'opacity-40' : 'group-hover:opacity-20'}`} />
                 
                 {/* Header Section */}
-                <div className="relative p-8 pb-6">
+                <div className="relative p-6 sm:p-8 pb-4 sm:pb-6">
                   <div className="flex items-start justify-between mb-6">
                     <div className="space-y-2">
                       <div className="flex items-center gap-3 mb-2">
@@ -300,7 +300,7 @@ const TeamShowcase = React.memo(() => {
                           {roleType}
                         </span>
                       </div>
-                      <h3 className="text-2xl font-bold leading-tight text-white">
+                      <h3 className="text-xl sm:text-2xl font-bold leading-tight text-white">
                         {member.name || `Team Member ${index + 1}`}
                       </h3>
                       <p className="text-sm font-medium text-white/80">{member.title || "Team Lead"}</p>
@@ -317,7 +317,7 @@ const TeamShowcase = React.memo(() => {
                 </div>
 
                 {/* Expertise Section */}
-                <div className="px-8 pb-6 flex-1">
+                <div className="px-6 sm:px-8 pb-4 sm:pb-6 flex-1">
                   {specialties.length > 0 && (
                     <div className="space-y-4">
                       <div className="flex items-center gap-2">
@@ -338,7 +338,7 @@ const TeamShowcase = React.memo(() => {
                 </div>
 
                 {/* Footer Section */}
-                <div className="p-8 pt-0">
+                <div className="p-6 sm:p-8 pt-0">
                   <div className="flex items-center justify-between pt-6 border-t border-white/10">
                     <div className="flex items-center gap-3">
                       <div className="flex items-center gap-2">

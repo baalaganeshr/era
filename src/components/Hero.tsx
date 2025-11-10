@@ -9,11 +9,7 @@ const programTracks = [
   "Corporate Training Pipeline",
 ];
 
-const partnerSignals = [
-  { value: "94%", label: "Placement within 90 days" },
-  { value: "1,200+", label: "Professionals certified" },
-  { value: "$47K", label: "Average salary lift" },
-];
+
 
 const Hero = React.memo(() => {
   return (
@@ -24,14 +20,14 @@ const Hero = React.memo(() => {
         <div className="absolute -bottom-28 right-0 h-72 w-72 rounded-full bg-gradient-to-tr from-indigo-500/25 to-transparent blur-[140px]" />
       </div>
 
-      <div className="page-shell grid lg:grid-cols-2 items-stretch gap-8 lg:gap-20 xl:gap-24">
-        <div style={{ maxWidth: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+      <div className="page-shell grid lg:grid-cols-2 items-center gap-6 md:gap-8 lg:gap-12 xl:gap-16 min-h-[70vh] md:min-h-[80vh] py-8 md:py-12">
+        <div className="flex flex-col justify-center max-w-2xl text-center lg:text-left">
           <motion.span
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="uppercase tracking-wider font-semibold"
-            style={{ color: 'var(--color-primary)', fontSize: '13px', display: 'inline-block', marginBottom: '32px' }}
+            className="uppercase tracking-wider font-semibold mb-6 md:mb-8 text-xs md:text-sm"
+            style={{ color: 'var(--color-primary)' }}
           >
             STACKO - Professional Development Platform
           </motion.span>
@@ -40,8 +36,8 @@ const Hero = React.memo(() => {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
-            style={{ fontWeight: 800, lineHeight: '1.1', letterSpacing: '-0.03em', marginBottom: '24px' }}
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 md:mb-6 leading-tight font-extrabold"
+            style={{ letterSpacing: '-0.02em' }}
           >
             Learn modern web development from expert developers
           </motion.h1>
@@ -50,7 +46,7 @@ const Hero = React.memo(() => {
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
-            style={{ fontSize: '18px', lineHeight: '1.7', color: 'var(--color-text-secondary)', marginBottom: '40px', maxWidth: '540px' }}
+            className="text-base md:text-lg leading-relaxed mb-8 md:mb-10 max-w-xl mx-auto lg:mx-0 text-white/80 px-4 lg:px-0"
           >
             Master React, Node.js, and full-stack development through hands-on courses. Build real projects with guidance from experienced developers.
           </motion.p>
@@ -59,42 +55,37 @@ const Hero = React.memo(() => {
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.9, ease: "easeOut" }}
-            className="flex flex-wrap items-center gap-4 mb-12 lg:mb-16"
+            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 md:gap-4 w-full px-4 lg:px-0"
           >
-            <Link to="/signup" className="btn btn-primary px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base">
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSftmT9nAdqWqHIW5N_hM4JW5CFHNlKq-H_Sc0ndz_G3r4WXWA/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-semibold w-full sm:w-auto min-w-[140px]"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                window.open("https://docs.google.com/forms/d/e/1FAIpQLSftmT9nAdqWqHIW5N_hM4JW5CFHNlKq-H_Sc0ndz_G3r4WXWA/viewform", "_blank", "noopener,noreferrer");
+                return false;
+              }}
+            >
               Start Learning
-            </Link>
-            <Link to="/services" className="btn btn-secondary px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base">
+            </a>
+            <Link to="/services" className="btn btn-secondary px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-semibold w-full sm:w-auto min-w-[140px]">
               View Services
             </Link>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.9, ease: "easeOut" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
-          >
-            {partnerSignals.map((signal) => (
-              <div
-                key={signal.label}
-                className="card text-center"
-                style={{ padding: '24px 16px' }}
-              >
-                <p className="text-gradient text-3xl sm:text-4xl lg:text-5xl" style={{ fontWeight: 800, lineHeight: 1, marginBottom: '12px' }}>{signal.value}</p>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>{signal.label}</p>
-              </div>
-            ))}
-          </motion.div>
+
         </div>
 
-        <div className="flex flex-col gap-6">
+        <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.8, ease: "easeOut" }}
-            className="hero-code-block flex-1 rounded-3xl border border-white/10 bg-[linear-gradient(150deg,rgba(17,24,39,0.9),rgba(15,23,42,0.8))] backdrop-blur-lg shadow-xl transition-all duration-300 hover:border-white/15 flex flex-col"
-            style={{ padding: '32px' }}
+            className="hero-code-block w-full max-w-md lg:max-w-lg rounded-2xl md:rounded-3xl border border-white/10 bg-[linear-gradient(150deg,rgba(17,24,39,0.9),rgba(15,23,42,0.8))] backdrop-blur-lg shadow-xl transition-all duration-300 hover:border-white/15 mx-4 lg:mx-0"
+            style={{ padding: '24px md:32px' }}
           >
             <p className="text-xs uppercase tracking-[0.32em] text-secondary-500 font-bold">Programs launching this quarter</p>
             <div className="mt-6 space-y-4 text-white/70" style={{ fontSize: '14px', lineHeight: '1.8' }}>

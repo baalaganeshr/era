@@ -44,8 +44,7 @@ const ServicesHighlight = () => {
               className="glass-surface hover-lift rounded-[3rem] border border-white/14 px-10 py-12"
               id={service.slug}
             >
-              <div className="flex items-center justify-between text-xs text-white/65">
-                <span className="rounded-full border border-white/20 px-4 py-1 text-white/90">{service.priceRange}</span>
+              <div className="flex items-center justify-end text-xs text-white/65">
                 <span className="text-secondary-500">{service.deliverables.length} deliverables</span>
               </div>
               <h3 className="mt-6 text-[clamp(1.7rem,2.3vw,2rem)] font-semibold text-white">{service.title}</h3>

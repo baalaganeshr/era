@@ -27,7 +27,7 @@ const courses: Course[] = [
       "Data wrangling with Pandas and Polars",
     ],
     stack: ["Python", "FastAPI", "Pandas"],
-    price: "9/mo",
+    price: "$9 USD/mo",
   },
   {
     id: 2,

@@ -47,7 +47,7 @@ const Header = () => {
             />
           </div>
           <div className="leading-none">
-            <p className="font-extrabold tracking-tight text-white transition-colors group-hover:text-primary text-xl sm:text-2xl md:text-3xl" style={{ fontWeight: 800 }}>
+            <p className="font-extrabold tracking-tight text-white transition-colors group-hover:text-primary text-lg sm:text-xl md:text-2xl" style={{ fontWeight: 800 }}>
               STACKO
             </p>
           </div>
@@ -69,14 +69,14 @@ const Header = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 12 }}
                   transition={{ duration: 0.22, ease: "easeOut" }}
-                  className="glass-surface absolute left-0 top-12 w-[26rem] rounded-[2.2rem] border border-white/14 p-6"
+                  className="glass-dropdown absolute left-0 top-12 w-[26rem] rounded-[2.2rem] p-6 z-50"
                 >
                   <div className="flex flex-col gap-4">
                     {coursePreviews.map((course) => (
                       <Link
                         key={course.id}
                         to={"/courses#" + course.slug}
-                        className="rounded-[1.6rem] border border-white/8 bg-white/6 px-4 py-3 transition hover:border-white/18 hover:bg-white/14"
+                        className="rounded-[1.6rem] border border-white/15 bg-white/10 px-4 py-3 transition hover:border-white/30 hover:bg-white/20"
                       >
                         <p className="text-sm font-semibold text-white">{course.title}</p>
                         <p className="text-xs text-white/70">{course.tagline}</p>
@@ -84,7 +84,7 @@ const Header = () => {
                     ))}
                     <Link
                       to="/courses"
-                      className="flex items-center justify-between rounded-[1.6rem] border border-dashed border-white/12 px-4 py-3 text-sm font-medium text-secondary-500 transition hover:border-secondary-500/45"
+                      className="flex items-center justify-between rounded-[1.6rem] border border-dashed border-white/20 px-4 py-3 text-sm font-medium text-secondary-400 transition hover:border-secondary-400/60 hover:text-secondary-300"
                     >
                       View full catalog →
                     </Link>
@@ -102,16 +102,21 @@ const Header = () => {
         </nav>
 
         <div className="hidden items-center lg:flex" style={{ gap: '32px' }}>
-          <NavLink to="/login" className={({ isActive }) => navLinkClass(isActive)}>
-            Login
-          </NavLink>
-          <Link
-            to="/signup"
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSftmT9nAdqWqHIW5N_hM4JW5CFHNlKq-H_Sc0ndz_G3r4WXWA/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-primary"
             style={{ padding: '12px 24px', borderRadius: '8px', fontSize: '15px', fontWeight: 600 }}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              window.open("https://docs.google.com/forms/d/e/1FAIpQLSftmT9nAdqWqHIW5N_hM4JW5CFHNlKq-H_Sc0ndz_G3r4WXWA/viewform", "_blank", "noopener,noreferrer");
+              return false;
+            }}
           >
             Start Learning
-          </Link>
+          </a>
         </div>
 
         <button
@@ -142,7 +147,7 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="glass-surface mx-5 mb-6 rounded-[2.4rem] border border-white/12 p-6 lg:hidden"
+            className="glass-dropdown mx-5 mb-6 rounded-[2.4rem] p-6 lg:hidden"
           >
             <div className="mb-5">
               <p className="text-xs uppercase tracking-[0.3em] text-white/60">Learn</p>
@@ -184,23 +189,7 @@ const Header = () => {
               </div>
             </div>
             <div className="flex flex-col gap-3">
-              <NavLink
-                to="/login"
-                className={({ isActive }) =>
-                  [
-                    "rounded-2xl border border-white/8 px-4 py-3 text-center text-sm font-medium",
-                    isActive ? "text-white" : "text-white",
-                  ].join(" ")
-                }
-              >
-                Login
-              </NavLink>
-              <Link
-                to="/signup"
-                className="btn btn-primary rounded-2xl px-4 py-3 text-center text-sm font-semibold uppercase tracking-[0.2em]"
-              >
-                Start learning free
-              </Link>
+              {/* Removed duplicate Start Learning button to fix overlay issue */}
             </div>
           </motion.nav>
         )}

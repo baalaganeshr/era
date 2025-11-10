@@ -108,7 +108,8 @@ export const getOrganizationStructuredData = () => ({
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer service",
-    "email": "hello@stacko.dev"
+    "email": "stackoindustries@gmail.com",
+    "telephone": "+91-975-198-7380"
   }
 });
 

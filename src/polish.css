@@ -350,10 +350,10 @@ a {
   }
 }
 
-/* Smooth Scroll Behavior */
-html {
+/* Smooth Scroll Behavior - Disabled to prevent conflicts */
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 /* Enhanced Navigation Hover */
 nav a:not(.btn) {

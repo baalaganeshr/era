@@ -74,7 +74,7 @@ export const PageSkeleton = ({ type = "home" }: { type?: "home" | "courses" | "b
       <div className="relative">
         {/* Hero Skeleton */}
         <section className="relative min-h-[100dvh] overflow-hidden px-4 py-[var(--spacing-block)]">
-          <div className="page-shell grid gap-16 pt-[calc(var(--spacing-block)*1.1)] pb-[calc(var(--spacing-block)*0.6)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="page-shell grid gap-8 pt-[calc(var(--spacing-block)*1.1)] pb-[calc(var(--spacing-block)*0.6)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-6">
                 <Skeleton width="200px" height="12px" />
@@ -118,7 +118,7 @@ export const PageSkeleton = ({ type = "home" }: { type?: "home" | "courses" | "b
 
         {/* Stats Skeleton */}
         <section className="section-padding">
-          <div className="page-shell space-y-20">
+          <div className="page-shell space-y-12">
             <div className="text-center space-y-6">
               <Skeleton width="200px" height="12px" className="mx-auto" />
               <Skeleton width="500px" height="60px" className="mx-auto" />

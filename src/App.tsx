@@ -12,7 +12,6 @@ import About from "@/pages/About";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import Contact from "@/pages/Contact";
-import Login from "@/pages/Login";
 import Signup from "@/pages/Signup";
 import Portfolio from "@/pages/Portfolio";
 import Reset from "@/pages/Reset";
@@ -23,7 +22,7 @@ import { Route, Routes } from "react-router-dom";
 import { useAnalytics, usePerformanceTracking } from "@/hooks/useAnalytics";
 import { Suspense, useEffect } from "react";
 import { PageSkeleton } from "@/components/LoadingStates";
-import { initMobileOptimizations, enhanceScrollSnap } from "@/utils/mobile";
+import { initMobileOptimizations } from "@/utils/mobile";
 
 const AppContent = () => {
   // Initialize analytics and performance tracking
@@ -33,11 +32,11 @@ const AppContent = () => {
   // Initialize mobile optimizations
   useEffect(() => {
     initMobileOptimizations();
-    enhanceScrollSnap();
+    // enhanceScrollSnap(); // Temporarily disabled to fix double scroll issue
   }, []);
   
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black text-white min-h-screen relative">
       <Background />
       <MouseTrail />
       <div className="relative flex min-h-screen flex-col">
@@ -53,7 +52,6 @@ const AppContent = () => {
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/reset" element={<Reset />} />

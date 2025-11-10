@@ -43,29 +43,7 @@ const Blog = () => {
         </div>
       </div>
 
-      <Reveal>
-        <div className="section-shell">
-          <div className="rounded-[3.2rem] border border-white/12 bg-black/45 p-[clamp(2.75rem,5vw,4.5rem)] text-center">
-            <h2 className="text-[clamp(2rem,3.4vw,2.6rem)] font-semibold text-white">Want STACKO in your inbox?</h2>
-            <p className="mt-4 text-sm text-white/70">
-              Curated digests on programming education, AI product strategy, and developer experience every two weeks.
-            </p>
-            <form className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <input
-                type="email"
-                required
-                placeholder="Email address"
-                className="w-full rounded-2xl border border-white/15 bg-white/10 px-5 py-3 text-sm text-white placeholder:text-white/55 focus:border-secondary-500 focus:outline-none focus:ring-2 focus:ring-secondary-500/30 sm:w-80"
-              />
-              <button type="submit" className="glass-button hover-lift rounded-2xl px-7 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white">
-                <span className="btn btn-primary rounded-2xl px-7 py-3 text-sm font-semibold uppercase tracking-[0.2em]">
-                  Subscribe
-                </span>
-              </button>
-            </form>
-          </div>
-        </div>
-      </Reveal>
+
     </div>
   );
 };

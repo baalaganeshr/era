@@ -10,40 +10,12 @@ const TrustIndicators = () => {
     { name: "Oracle" }
   ];
 
-  const metrics = [
-    { value: "1,200+", label: "Professionals Certified", color: "text-white" },
-    { value: "94%", label: "Career Advancement Rate", color: "text-white" },
-    { value: "$47K", label: "Average Salary Increase", color: "text-white" },
-    { value: "15+", label: "Years of Excellence", color: "text-white" }
-  ];
+
 
   return (
-    <section className="py-16 px-4 border-t border-white/5">
+    <section className="py-8 px-4 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
-        {/* Trust Metrics */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
-        >
-          {metrics.map((metric, index) => (
-            <motion.div
-              key={metric.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="text-center"
-            >
-              <h3 className={`text-3xl md:text-4xl font-bold ${metric.color} mb-2`}>
-                {metric.value}
-              </h3>
-              <p className="text-white/70 text-sm uppercase tracking-wider">
-                {metric.label}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
+
 
         {/* Company Logos */}
         <motion.div
