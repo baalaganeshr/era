@@ -6,7 +6,7 @@ import App from "./App.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter basename="/stacko-1.0">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </StrictMode>

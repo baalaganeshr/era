@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="flex items-center justify-center md:justify-start" style={{ gap: '16px', marginBottom: '24px' }}>
             <div className="h-12 w-12 md:h-16 md:w-16 flex items-center justify-center flex-shrink-0">
               <img 
-                src="/stacko-1.0/stacko-logo.svg" 
+                src="/stacko-logo.svg" 
                 alt="STACKO Logo" 
                 className="h-full w-full object-contain"
               />
