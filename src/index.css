@@ -71,6 +71,11 @@ html {
   -moz-text-size-adjust: 100%;
   /* Prevent horizontal overflow on small screens */
   max-width: 100vw;
+  /* Enhanced mobile touch scrolling */
+  -webkit-overflow-scrolling: touch;
+  /* Better mobile font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -1317,6 +1322,35 @@ html, body {
     /* Better mobile padding */
     .rounded-3xl {
       border-radius: 20px !important;
+    }
+    
+    /* Course cards mobile optimization */
+    [data-course-card="true"] {
+      min-width: 300px !important;
+      max-width: 340px !important;
+    }
+    
+    /* Team cards mobile optimization */
+    [data-mentor-card="true"] {
+      min-width: 280px !important;
+      max-width: 320px !important;
+    }
+    
+    /* Better mobile section spacing */
+    .section-padding {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+    
+    /* Mobile navigation improvements */
+    .glass-navbar {
+      padding: 1rem;
+    }
+    
+    /* Mobile hero text improvements */
+    .balanced-text {
+      font-size: 1.8rem !important;
+      line-height: 1.3;
     }
   }
 
