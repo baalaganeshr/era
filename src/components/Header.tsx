@@ -39,7 +39,7 @@ const Header = () => {
     <header className={["sticky top-0 z-50 glass-navbar transition-all duration-300", scrolled ? "shadow-lg" : ""].join(" ")}>
       <div className="page-shell flex items-center justify-between" style={{ paddingTop: '24px', paddingBottom: '24px' }}>
         <Link to="/" className="group flex items-center" style={{ gap: '16px' }}>
-          <div className="h-12 w-12 flex items-center justify-center flex-shrink-0">
+          <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 flex items-center justify-center flex-shrink-0">
             <img 
               src="/stacko-1.0/stacko-logo.svg" 
               alt="STACKO Logo" 
@@ -47,7 +47,7 @@ const Header = () => {
             />
           </div>
           <div className="leading-none">
-            <p className="font-extrabold tracking-tight text-white transition-colors group-hover:text-primary" style={{ fontWeight: 800, fontSize: '28px' }}>
+            <p className="font-extrabold tracking-tight text-white transition-colors group-hover:text-primary text-xl sm:text-2xl md:text-3xl" style={{ fontWeight: 800 }}>
               STACKO
             </p>
           </div>

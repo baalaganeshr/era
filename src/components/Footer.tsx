@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Brand Column */}
         <div>
           <div className="flex items-center" style={{ gap: '16px', marginBottom: '24px' }}>
-            <div className="h-12 w-12 flex items-center justify-center flex-shrink-0">
+            <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 flex items-center justify-center flex-shrink-0">
               <img 
                 src="/stacko-1.0/stacko-logo.svg" 
                 alt="STACKO Logo" 
@@ -17,7 +17,7 @@ const Footer = () => {
               />
             </div>
             <div>
-              <p style={{ fontSize: '28px', fontWeight: 800, color: 'white', lineHeight: 1 }}>STACKO</p>
+              <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white" style={{ lineHeight: 1 }}>STACKO</p>
               <p className="text-small" style={{ color: 'var(--color-text-muted)', marginTop: '4px' }}>Programming Collective</p>
             </div>
           </div>
