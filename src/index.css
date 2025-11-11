@@ -195,9 +195,13 @@ div:not(html):not(.snap-x):not(.snap-y):not(.hide-scrollbar):not([class*="overfl
 
 /* Specific fixes for common layout issues */
 .glass-surface,
-.glass-navbar,
 .glass-dropdown {
   overflow-x: hidden;
+}
+
+.glass-navbar {
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 /* Ensure flex containers don't create unwanted scrollbars */
@@ -1368,6 +1372,96 @@ html, body {
     }
   }
 
+  /* Mobile Touch Enhancements */
+  @media (max-width: 1023px) {
+    /* Improve tap target sizes for mobile */
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Smooth scrolling for mobile menu */
+    .glass-dropdown {
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
+
+    /* Prevent text selection on touch */
+    .touch-manipulation {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      user-select: none;
+    }
+
+    /* Custom scrollbar for mobile menu */
+    .glass-dropdown::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .glass-dropdown::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+    }
+
+    .glass-dropdown::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+    }
+
+    .glass-dropdown::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  /* Animations for dropdowns - replacing Framer Motion */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      max-height: 0;
+    }
+    to {
+      opacity: 1;
+      max-height: 24rem;
+    }
+  }
+
+  /* Dropdown animations */
+  .dropdown-enter {
+    animation: fadeInUp 0.2s ease-out forwards;
+  }
+
+  .mobile-menu-enter {
+    animation: fadeInDown 0.2s ease-out forwards;
+  }
+
+  .course-items-enter {
+    animation: slideDown 0.2s ease-out forwards;
+  }
+
 }
+
+
 
 

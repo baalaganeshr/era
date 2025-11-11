@@ -22,25 +22,30 @@ export default defineConfig({
     sourcemap: false,
     minify: 'terser',
     target: 'es2015',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn'],
+      },
+    },
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          router: ['react-router-dom'],
-          animations: ['framer-motion'],
-          utils: ['src/utils/performance']
+          'react-vendor': ['react', 'react-dom'],
+          'router': ['react-router-dom'],
+          'animations': ['framer-motion']
         },
-        // Optimize chunk naming
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
         assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
       }
     },
-    // Optimize bundle size
-    chunkSizeWarningLimit: 600
+    chunkSizeWarningLimit: 500,
+    cssCodeSplit: true,
+    reportCompressedSize: false
   },
-  // Performance optimizations
   esbuild: {
-    drop: ['console', 'debugger']
+    logOverride: { 'this-is-undefined-in-esm': 'silent' }
   }
 });
