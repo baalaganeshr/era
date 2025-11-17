@@ -120,11 +120,6 @@ const TeamShowcase = React.memo(() => {
     if (closestIndex !== activeIndex) {
       setActiveIndex(closestIndex);
     }
-    
-    // Calculate progress more accurately
-    const maxScroll = node.scrollWidth - node.clientWidth;
-    const currentProgress = maxScroll <= 0 ? 1 : Math.max(0, Math.min(1, node.scrollLeft / maxScroll));
-    setProgress(currentProgress);
   }, [activeIndex]);
 
   useEffect(() => {
