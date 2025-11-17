@@ -1,5 +1,4 @@
 import Reveal from "@/components/Reveal";
-import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -29,13 +28,6 @@ const services = [
 ];
 
 const Services = () => {
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact-section');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0f1a] via-[#06070C] to-black py-16 px-4 relative">
       {/* Background gradient effects */}

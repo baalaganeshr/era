@@ -1,5 +1,4 @@
 ﻿import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import team from "@/data/team";
 import Reveal from "@/components/Reveal";
 
@@ -189,21 +188,6 @@ const TeamShowcase = React.memo(() => {
     }
   }, [slides.length]);
 
-  const handleNavigate = useCallback(
-    (direction: "prev" | "next") => {
-      if (!slides.length) return;
-      const delta = direction === "next" ? 1 : -1;
-      const nextIndex = (() => {
-        if (direction === "next" && activeIndex === slides.length - 1) return 0;
-        if (direction === "prev" && activeIndex === 0) return slides.length - 1;
-        return activeIndex + delta;
-      })();
-
-      scrollToIndex(nextIndex);
-    },
-    [activeIndex, scrollToIndex, slides.length]
-  );
-
   // Auto-play disabled for better user control
   // useEffect(() => {
   //   if (!isAutoPlay || !slides || slides.length <= 1) return;
@@ -215,10 +199,6 @@ const TeamShowcase = React.memo(() => {
 
   //   return () => window.clearTimeout(timer);
   // }, [activeIndex, isAutoPlay, scrollToIndex, slides]);
-
-  const progressPercent = slides.length <= 1 
-    ? 100 
-    : Math.max(8, Math.min(100, (progress > 0 ? progress : activeIndex / Math.max(1, slides.length - 1)) * 100));
 
   // Early return if no data to prevent empty state (after all hooks)
   if (!slides || slides.length === 0) {
@@ -247,11 +227,10 @@ const TeamShowcase = React.memo(() => {
         </Reveal>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {slides.map(({ member, variant }, index) => {
+          {slides.map(({ member }, index) => {
             const specialties = toSpecialtyTokens(member.specialty || "General expertise").slice(0, 2);
             const summary = simpleMentorSummaries[member.id] ?? member.bio ?? "Bringing expertise to help you succeed";
             const roleType = mentorRoles[member.id] ?? "Leadership";
-            const experience = mentorExperience[member.id] ?? "1-2 years";
             return (
               <Reveal key={member.id} delay={index * 0.1}>
                 <article
