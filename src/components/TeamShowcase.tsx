@@ -61,16 +61,6 @@ const mentorRoles: Record<number, string> = {
   7: "Partnership Leadership",
 };
 
-const mentorExperience: Record<number, string> = {
-  1: "1-2 years",
-  2: "1-2 years",
-  3: "1-2 years", 
-  4: "1-2 years",
-  5: "1-2 years",
-  6: "1-2 years",
-  7: "1-2 years",
-};
-
 const toSpecialtyTokens = (value: string) =>
   value
     .split("&")
@@ -91,7 +81,6 @@ const TeamShowcase = React.memo(() => {
   );
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const [progress, setProgress] = useState(0);
 
   // Auto-play functionality removed for better user control
 
@@ -160,33 +149,6 @@ const TeamShowcase = React.memo(() => {
       window.removeEventListener("resize", computeActiveCard);
     };
   }, [computeActiveCard]);
-
-  const scrollToIndex = useCallback((index: number) => {
-    const node = sliderRef.current;
-    if (!node || index < 0 || index >= slides.length) return;
-    
-    const cards = node.querySelectorAll<HTMLElement>('[data-mentor-card="true"]');
-    const target = cards[index];
-    
-    if (target) {
-      // Calculate scroll position for centering
-      const containerWidth = node.clientWidth;
-      const targetRect = target.getBoundingClientRect();
-      const containerRect = node.getBoundingClientRect();
-      const targetCenter = targetRect.left + targetRect.width / 2 - containerRect.left;
-      const containerCenter = containerWidth / 2;
-      const scrollOffset = targetCenter - containerCenter;
-      
-      // Smooth scroll to position
-      node.scrollTo({
-        left: node.scrollLeft + scrollOffset,
-        behavior: 'smooth'
-      });
-      
-      // Update active index immediately for better UX
-      setActiveIndex(index);
-    }
-  }, [slides.length]);
 
   // Auto-play disabled for better user control
   // useEffect(() => {
