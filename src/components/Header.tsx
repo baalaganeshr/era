@@ -40,12 +40,8 @@ const Header = () => {
     ].join(" ");
 
   return (
-    <header className={["sticky top-0 z-50 transition-all duration-300", scrolled ? "shadow-sm" : ""].join(" ")} style={{
-      background: 'transparent',
-      backdropFilter: 'blur(12px)',
-      WebkitBackdropFilter: 'blur(12px)'
-    }}>
-      <div className="page-shell flex items-center justify-between py-4 sm:py-6">
+    <header className={["sticky top-0 z-50 glass-navbar transition-all duration-300", scrolled ? "shadow-lg" : ""].join(" ")}>
+      <div className="page-shell flex items-center justify-between py-6">
         <Link to="/" className="group flex items-center gap-4">
           <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 flex items-center justify-center flex-shrink-0">
             <img
@@ -97,7 +93,7 @@ const Header = () => {
       </div>
 
       {isMobileOpen && (
-        <div className="lg:hidden border-t border-white/5 bg-black/80 backdrop-blur-xl">
+        <div className="lg:hidden border-t border-white/10 bg-black/95 backdrop-blur-lg">
           <nav className="page-shell py-6 flex flex-col gap-4">
             {primaryLinks.map((link) => (
               <NavLink

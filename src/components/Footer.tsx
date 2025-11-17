@@ -45,9 +45,6 @@ const Footer = () => {
             <Link className="text-xs sm:text-sm text-white/60 hover:text-white hover:translate-x-1 transition-all duration-300 font-medium" to="/about">
               About & Founders
             </Link>
-            <Link className="text-xs sm:text-sm text-white/60 hover:text-white hover:translate-x-1 transition-all duration-300 font-medium" to="/blog">
-              Programming Blog
-            </Link>
             <Link className="text-xs sm:text-sm text-white/60 hover:text-white hover:translate-x-1 transition-all duration-300 font-medium" to="/services">
               Development Services
             </Link>
@@ -65,9 +62,6 @@ const Footer = () => {
           <div className="flex flex-col gap-2.5">
             <Link className="text-xs sm:text-sm text-white/60 hover:text-white hover:translate-x-1 transition-all duration-300 font-medium" to="/courses">
               Courses
-            </Link>
-            <Link className="text-xs sm:text-sm text-white/60 hover:text-white hover:translate-x-1 transition-all duration-300 font-medium" to="/blog">
-              Blog
             </Link>
             <a 
               className="text-xs sm:text-sm text-white/60 hover:text-white hover:translate-x-1 transition-all duration-300 font-medium" 
@@ -126,21 +120,10 @@ const Footer = () => {
       </div>
       <div className="mt-4 sm:mt-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-3 sm:py-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
-            <p className="text-xs sm:text-sm text-white/40 font-medium text-center md:text-left">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-3 sm:gap-4">
+            <p className="text-xs sm:text-sm text-white/40 font-medium text-center">
               © {currentYear} STACKO Labs. Built for the next generation of creators.
             </p>
-            <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm text-white/40">
-              <Link to="/privacy" className="hover:text-white/60 transition-colors">
-                Privacy
-              </Link>
-              <Link to="/terms" className="hover:text-white/60 transition-colors">
-                Terms
-              </Link>
-              <Link to="/accessibility" className="hover:text-white/60 transition-colors">
-                Accessibility
-              </Link>
-            </div>
           </div>
         </div>
       </div>

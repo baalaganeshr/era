@@ -11,7 +11,7 @@ const team: TeamMember[] = [
   {
     id: 1,
     name: "Baala Ganesh R",
-    title: "Co-Founder & Full-Stack Developer",
+    title: "CEO",
     specialty: "React, Node.js & Modern Web Development",
     bio: "Co-founder leading technical innovation and creating modern web applications with cutting-edge technologies",
     portfolio: "https://baalaganeshr.github.io/new-portfolio/",
@@ -19,7 +19,7 @@ const team: TeamMember[] = [
   {
     id: 2,
     name: "Madhan Kumar B",
-    title: "Co-Founder & Software Engineer",
+    title: "Founder",
     specialty: "Full-stack Development & Product Strategy",
     bio: "Co-founder driving product vision and building scalable software solutions for complex challenges",
     portfolio: "https://madhan-kumar-b.github.io/portfoliomk.comgit/",
@@ -27,7 +27,7 @@ const team: TeamMember[] = [
   {
     id: 3,
     name: "Harikrishnan A",
-    title: "Software Engineer & Product Developer",
+    title: "CPO",
     specialty: "Full-stack development & System Architecture",
     bio: "Building scalable software solutions and architecting robust systems for complex web applications",
     portfolio: "https://baalaganeshr.github.io/Harikrishnan-A/",
@@ -35,7 +35,7 @@ const team: TeamMember[] = [
   {
     id: 4,
     name: "Aathan J",
-    title: "Frontend Developer & Creative Technologist",
+    title: "Co-Founder",
     specialty: "Modern Frontend & Interactive Experiences",
     bio: "Specializing in innovative frontend technologies and crafting engaging interactive digital experiences",
     portfolio: "https://aathanj.github.io/AathanJ.github/",

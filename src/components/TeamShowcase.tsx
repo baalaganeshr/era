@@ -41,31 +41,6 @@ const mentorVariants: MentorVariant[] = [
     dot: "bg-white/55",
   },
 ];
-const simpleMentorSummaries: Record<number, string> = {
-  1: "Creating modern web applications with React, Node.js, and cutting-edge UI/UX design principles",
-  2: "Building scalable software solutions and architecting robust systems for complex web applications", 
-  3: "Specializing in innovative frontend technologies and crafting engaging interactive digital experiences",
-  4: "Building production-grade React applications and mentoring teams through complex technical challenges",
-  5: "Converting cutting-edge AI research into deployable business solutions and automation frameworks",
-  6: "Strategic talent placement and program development connecting developers with high-impact opportunities",
-  7: "Driving growth initiatives and partnership development across university and enterprise networks",
-};
-
-const mentorRoles: Record<number, string> = {
-  1: "CEO",
-  2: "Founder", 
-  3: "CPO",
-  4: "Engineering Leadership",
-  5: "Research Leadership",
-  6: "Program Leadership",
-  7: "Partnership Leadership",
-};
-
-const toSpecialtyTokens = (value: string) =>
-  value
-    .split("&")
-    .map((token) => token.trim())
-    .filter(Boolean);
 
 const TeamShowcase = React.memo(() => {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -185,9 +160,6 @@ const TeamShowcase = React.memo(() => {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {slides.map(({ member }, index) => {
-            const specialties = toSpecialtyTokens(member.specialty || "General expertise").slice(0, 2);
-            const summary = simpleMentorSummaries[member.id] ?? member.bio ?? "Bringing expertise to help you succeed";
-            const roleType = mentorRoles[member.id] ?? "Leadership";
             return (
               <Reveal key={member.id} delay={index * 0.1}>
                 <article
@@ -196,38 +168,57 @@ const TeamShowcase = React.memo(() => {
                 
                 {/* Header Section */}
                 <div className="relative p-6 pb-5">
-                  {/* Role badge */}
+                  {/* Role badge - using actual title */}
                   <div className="inline-flex items-center gap-1.5 mb-4 px-2 py-1 rounded bg-white/[0.04] border border-white/[0.06]">
                     <span className="text-[9px] font-semibold uppercase tracking-[0.15em] text-white/50">
-                      {roleType}
+                      {member.title || "Team Member"}
                     </span>
                   </div>
                   
                   <h3 className="text-lg font-semibold text-white mb-1.5">
                     {member.name || `Team Member ${index + 1}`}
                   </h3>
-                  <p className="text-sm text-white/40 mb-4">{member.title || "Team Lead"}</p>
-                  
-                  <p className="text-sm leading-relaxed text-white/50 line-clamp-2">
-                    {summary}
+                  <p className="text-sm text-white/40 mb-4">
+                    {member.id === 1 && "Chief Executive Officer of STACKO"}
+                    {member.id === 2 && "Founder & Visionary of STACKO"}
+                    {member.id === 3 && "Chief Product Officer of STACKO"}
+                    {member.id === 4 && "Co-Founder & Technical Lead of STACKO"}
                   </p>
-                </div>
-
-                {/* Expertise Section */}
-                <div className="relative px-6 pb-5 flex-1">
-                  {specialties.length > 0 && (
-                    <div className="space-y-2.5">
-                      <h4 className="text-[10px] font-semibold uppercase tracking-wider text-white/30 mb-3">Expertise</h4>
-                      <div className="space-y-2">
-                        {specialties.map((specialty) => (
-                          <div key={specialty} className="flex items-start gap-2">
-                            <div className="mt-1.5 h-1 w-1 rounded-full bg-secondary-500/40 flex-shrink-0" />
-                            <span className="text-xs text-white/60 leading-relaxed">{specialty}</span>
-                          </div>
-                        ))}
-                      </div>
+                  
+                  {/* Expertise Section */}
+                  <div className="mb-4">
+                    <h4 className="text-[10px] font-semibold uppercase tracking-wider text-white/30 mb-2">Core Expertise</h4>
+                    <div className="space-y-1">
+                      {member.id === 1 && (
+                        <>
+                          <span className="inline-block text-xs text-white/60 bg-white/[0.04] px-2 py-1 rounded mr-2 mb-1">Artificial Intelligence</span>
+                          <span className="inline-block text-xs text-white/60 bg-white/[0.04] px-2 py-1 rounded mr-2 mb-1">Full-Stack Architecture</span>
+                          <span className="inline-block text-xs text-white/60 bg-white/[0.04] px-2 py-1 rounded mr-2 mb-1">Strategic Leadership</span>
+                        </>
+                      )}
+                      {member.id === 2 && (
+                        <>
+                          <span className="inline-block text-xs text-white/60 bg-white/[0.04] px-2 py-1 rounded mr-2 mb-1">IoT Development</span>
+                          <span className="inline-block text-xs text-white/60 bg-white/[0.04] px-2 py-1 rounded mr-2 mb-1">Process Automation</span>
+                          <span className="inline-block text-xs text-white/60 bg-white/[0.04] px-2 py-1 rounded mr-2 mb-1">Product Strategy</span>
+                        </>
+                      )}
+                      {member.id === 3 && (
+                        <>
+                          <span className="inline-block text-xs text-white/60 bg-white/[0.04] px-2 py-1 rounded mr-2 mb-1">AI Prompt Engineering</span>
+                          <span className="inline-block text-xs text-white/60 bg-white/[0.04] px-2 py-1 rounded mr-2 mb-1">Full-Stack Development</span>
+                          <span className="inline-block text-xs text-white/60 bg-white/[0.04] px-2 py-1 rounded mr-2 mb-1">System Architecture</span>
+                        </>
+                      )}
+                      {member.id === 4 && (
+                        <>
+                          <span className="inline-block text-xs text-white/60 bg-white/[0.04] px-2 py-1 rounded mr-2 mb-1">Technical Assessment</span>
+                          <span className="inline-block text-xs text-white/60 bg-white/[0.04] px-2 py-1 rounded mr-2 mb-1">Python Development</span>
+                          <span className="inline-block text-xs text-white/60 bg-white/[0.04] px-2 py-1 rounded mr-2 mb-1">Educational Technology</span>
+                        </>
+                      )}
                     </div>
-                  )}
+                  </div>
                 </div>
 
                 {/* Footer Section */}
