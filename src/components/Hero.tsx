@@ -12,8 +12,8 @@ const Hero = React.memo(() => {
         <div className="absolute -bottom-28 right-0 h-96 w-96 rounded-full bg-indigo-600/15 blur-3xl" />
       </div>
 
-      <div className="page-shell flex items-center justify-center min-h-[75vh] md:min-h-[80vh] py-8 md:py-12">
-        <div className="flex flex-col justify-center max-w-3xl text-center">
+      <div className="page-shell flex items-center justify-center min-h-[70vh] md:min-h-[80vh] py-12 md:py-16">
+        <div className="flex flex-col justify-center max-w-4xl text-center w-full px-4">
           <span
             className="uppercase tracking-wider font-semibold mb-4 md:mb-6 text-sm md:text-base animate-[fadeInUp_0.6s_ease-out] text-purple-400"
           >
@@ -36,7 +36,7 @@ const Hero = React.memo(() => {
           </p>
 
           <div
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 w-full animate-[fadeInUp_0.9s_ease-out_0.3s_both]"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 w-full max-w-xl mx-auto animate-[fadeInUp_0.9s_ease-out_0.3s_both]"
           >
             <MobileButton
               variant="primary"

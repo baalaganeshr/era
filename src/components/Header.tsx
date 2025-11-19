@@ -41,9 +41,9 @@ const Header = () => {
 
   return (
     <header className={["sticky top-0 z-50 glass-navbar transition-all duration-300", scrolled ? "shadow-lg" : ""].join(" ")}>
-      <div className="page-shell flex items-center justify-between py-6">
-        <Link to="/" className="group flex items-center gap-4">
-          <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 flex items-center justify-center flex-shrink-0">
+      <div className="page-shell flex items-center justify-between py-2 sm:py-3">
+        <Link to="/" className="group flex items-center gap-2 sm:gap-3">
+          <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center flex-shrink-0">
             <img
               src="/stacko-logo.svg"
               alt="STACKO Logo"
@@ -93,8 +93,8 @@ const Header = () => {
       </div>
 
       {isMobileOpen && (
-        <div className="lg:hidden border-t border-white/10 bg-black/95 backdrop-blur-lg">
-          <nav className="page-shell py-6 flex flex-col gap-4">
+        <div className="lg:hidden border-t border-white/10 bg-black/30 backdrop-blur-lg">
+          <nav className="page-shell py-3 flex flex-col gap-3">
             {primaryLinks.map((link) => (
               <NavLink
                 key={link.href}
