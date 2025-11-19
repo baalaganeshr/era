@@ -1,0 +1,32 @@
+{
+  "name": "STACKO - Professional Software Development Training",
+  "short_name": "STACKO",
+  "description": "Enterprise-grade software development education with hands-on training, expert mentorship, and career advancement opportunities.",
+  "icons": [
+    {
+      "src": "/stacko-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#8B5CF6",
+  "background_color": "#000000",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}

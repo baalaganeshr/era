@@ -1,5 +1,23 @@
 User-agent: *
 Allow: /
+Sitemap: https://stack-o.com/sitemap.xml
+
+# Optimize crawl budget
+Crawl-delay: 1
+
+# Allow all search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Disallow admin paths if any
+Disallow: /api/
+Disallow: /_next/
 
 # Sitemap
 Sitemap: http://localhost:5173/sitemap.xml
