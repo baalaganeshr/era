@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://stack-o.com/sitemap.xml
+Sitemap: https://www.stack-o.com/sitemap.xml
 
 # Optimize crawl budget
 Crawl-delay: 1
