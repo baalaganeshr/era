@@ -48,8 +48,6 @@
   --color-muted: var(--color-muted);
   --color-primary-500: var(--color-primary);
   --color-secondary-500: var(--color-secondary);
-  --font-sans: var(--font-stacko-sans);
-  --font-mono: var(--font-stacko-mono);
 }
 
 /* Reset and base styles for proper scrolling */

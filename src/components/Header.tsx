@@ -40,10 +40,11 @@ const Header = () => {
     ].join(" ");
 
   return (
-    <header className={["sticky top-0 z-50 glass-navbar transition-all duration-300", scrolled ? "shadow-lg" : ""].join(" ")}>
-      <div className="page-shell flex items-center justify-between py-2 sm:py-3">
-        <Link to="/" className="group flex items-center gap-2 sm:gap-3">
-          <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center flex-shrink-0">
+    <header className={["sticky top-0 z-50 transition-all duration-300 bg-black backdrop-blur-xl", scrolled ? "shadow-lg" : ""].join(" ")}>
+      <div className="w-full px-8 lg:px-12 xl:px-16 flex items-center h-20">
+        {/* Logo Section - Left */}
+        <Link to="/" className="group flex items-center gap-3 mr-auto">
+          <div className="h-14 w-14 flex items-center justify-center flex-shrink-0">
             <img
               src="/stacko-logo.svg"
               alt="STACKO Logo"
@@ -52,14 +53,13 @@ const Header = () => {
               fetchPriority="high"
             />
           </div>
-          <div className="leading-none">
-            <p className="font-extrabold tracking-tight text-white transition-colors group-hover:text-primary text-lg sm:text-xl md:text-2xl" style={{ fontWeight: 800 }}>
-              STACKO
-            </p>
-          </div>
+          <span className="font-extrabold text-white text-2xl tracking-tight transition-colors group-hover:text-primary" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 800 }}>
+            STACKO
+          </span>
         </Link>
 
-        <nav className="hidden items-center lg:flex gap-10">
+        {/* Navigation - Center/Right */}
+        <nav className="hidden lg:flex items-center gap-10">
           {primaryLinks.map((link) => (
             <NavLink
               key={link.href}
@@ -71,10 +71,7 @@ const Header = () => {
           ))}
           <Link
             to="/courses"
-            className="rounded-full bg-gradient-to-r from-secondary-500 to-primary px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 shadow-lg shadow-secondary-500/50 hover:shadow-secondary-500/80"
-            style={{
-              boxShadow: '0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)',
-            }}
+            className="rounded-full bg-gradient-to-r from-primary to-secondary px-7 py-2.5 text-sm font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/50"
           >
             Start Learning
           </Link>
@@ -93,8 +90,8 @@ const Header = () => {
       </div>
 
       {isMobileOpen && (
-        <div className="lg:hidden border-t border-white/10 bg-black/30 backdrop-blur-lg">
-          <nav className="page-shell py-3 flex flex-col gap-3">
+        <div className="lg:hidden border-t border-white/10 bg-black">
+          <nav className="px-8 py-4 flex flex-col gap-4">
             {primaryLinks.map((link) => (
               <NavLink
                 key={link.href}
@@ -106,10 +103,7 @@ const Header = () => {
             ))}
             <Link
               to="/courses"
-              className="rounded-full bg-gradient-to-r from-secondary-500 to-primary px-6 py-3 text-sm font-semibold text-white text-center"
-              style={{
-                boxShadow: '0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)',
-              }}
+              className="rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-3 text-sm font-bold text-white text-center"
             >
               Start Learning
             </Link>

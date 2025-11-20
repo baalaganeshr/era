@@ -18,10 +18,3 @@ Allow: /
 # Disallow admin paths if any
 Disallow: /api/
 Disallow: /_next/
-
-# Sitemap
-Sitemap: http://localhost:5173/sitemap.xml
-
-# Block specific paths if needed
-# Disallow: /admin/
-# Disallow: /api/
