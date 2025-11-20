@@ -60,11 +60,16 @@
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
       "name": "STACKO",
-      "alternateName": "stack-o",
+      "alternateName": ["stack-o", "Stack O"],
       "url": "https://www.stack-o.com",
-      "logo": "https://www.stack-o.com/stacko-logo.svg",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.stack-o.com/logo-512.png",
+        "width": 512,
+        "height": 512
+      },
       "image": "https://www.stack-o.com/stacko-logo-bg.png",
-      "description": "Professional software development training and services with expert mentorship",
+      "description": "Professional software development training and services with expert mentorship. Learn React, Node.js, Full-Stack Development with industry experts.",
       "foundingDate": "2025",
       "sameAs": [
         "https://www.stack-o.com"
@@ -80,6 +85,10 @@
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "IN"
+      },
+      "offers": {
+        "@type": "Offer",
+        "category": "Educational Services"
       }
     }
     </script>
